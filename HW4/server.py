@@ -29,7 +29,7 @@ s.listen(2)
 
 while True:
     client, addr = s.accept()
-    print('Connection from', addr)
+    print('Conection from', addr)
 
     while True:
         expression_bytes = client.recv(1024)
