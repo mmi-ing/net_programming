@@ -43,4 +43,4 @@ while True:
             result_bytes = str(result).encode()
             client.send(result_bytes)
 
-    client.close()
+    client.close() 
