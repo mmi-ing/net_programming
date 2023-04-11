@@ -21,6 +21,9 @@ while True:
             
             # 데이터 전송
             conn.sendall(f'Device 1: Temp={temp}, Humid={humid}, Illum={illum}'.encode())
+        elif data == 'quit':
+            print('Quit')
+            conn.close()
+            break
     
     conn.close()
-    print('Device 1 is disconnected')

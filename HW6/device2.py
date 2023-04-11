@@ -21,6 +21,10 @@ while True:
             
             # 데이터 전송
             conn.sendall(f'Device 2: Heartbeat={heartbeat}, Steps={steps}, Cal={cal}'.encode())
+        elif data == 'quit':
+            print('Quit')
+            conn.close()
+            break
     
     conn.close()
     print('Device 2 is disconnected')

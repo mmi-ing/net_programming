@@ -4,6 +4,11 @@ import time
 while True:
     device = input('Select Device (1 or 2): ')
     if device == 'quit':
+        for port in [9000, 9001]:
+            s = socket(AF_INET, SOCK_STREAM)
+            s.connect(('localhost', port))
+            s.sendall('quit'.encode())
+            s.close()
         break
     elif device not in ('1', '2'):
         print('Invalid input')
