@@ -11,11 +11,11 @@ while True:
             sock.send(b'q')
             break
         else:
-            sock.send(expression.encode())
-            result_bytes = sock.recv(1024)
-            print(result_bytes.decode())
-    except BrokenPipeError:
-        print('Error: Broken pipe')
+            sock.send(expression.encode())  #서버로 전송
+            result_bytes = sock.recv(1024)  #서버에서 결과값을 받음
+            print(result_bytes.decode())    #출력
+    except:
+        print('connection closed')
         break
 
 sock.close()
