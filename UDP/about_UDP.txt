@@ -1,0 +1,12 @@
+UDP 소켓 유형 : SOCK_DGRAM
+
+서버 : 소켓 생성(socket()) 후 바인드(bind())
+클라이언트 : 소켓 생성(socket()) 후 송신
+
+송신 : sendto(data, addr)
+수신 : recvfrom(buffer_size)
+
+중간에 분실될 수 있음
+
+encode(): 문자열을 바이트로 변환
+decode(): 바이트를 문자열로 변환
