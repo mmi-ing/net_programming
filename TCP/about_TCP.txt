@@ -9,13 +9,19 @@ TCP 소켓 유형 : SOCK_STREAM
 클라이언트 : 소켓 생성(socket()) 후 송신
         sock.connect() : 서버에 연결 요청
 
-송신 : sendto(data, addr)
-        sock.send() : TCP 소켓으로 메시지를 전송. 송신 바이트 수 반환
-        sock.sendall() : TCP 소켓으로 메시지를 버퍼에 남기지 않고 모두 전송
-수신 : recvfrom(buffer_size)
-        sock.recv() : TCP 소켓을 통해 메시지를 수신. 수신 데이터 반환
-        sock.recv_into() : TCP 소켓ㅇ르 통해 메시지를 수신하여 버퍼에 저장
+송신 : sock.send() : TCP 소켓으로 메시지를 전송. 송신 바이트 수 반환
+      sock.sendall() : TCP 소켓으로 메시지를 버퍼에 남기지 않고 모두 전송
+수신 : sock.recv() : TCP 소켓을 통해 메시지를 수신. 수신 데이터 반환
+      sock.recv_into() : TCP 소켓ㅇ르 통해 메시지를 수신하여 버퍼에 저장
 
+서버
+from socket import *
+
+relay_server = socket(AF_INET, SOCK_STREAM)
+relay_server.bind(('', 9000))
+relay_server.listen(1)
+
+클라이언트
 
 중간에 분실될 수 있음
 
