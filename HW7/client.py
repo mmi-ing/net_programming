@@ -12,7 +12,7 @@ def recv_task(sock):
 sock = socket(AF_INET, SOCK_STREAM)
 sock.connect(('localhost', PORT))
 
-id = input('ID 를 입력하세요! : ')
+id = input('ID 를 입력하세요 : ')
 sock.send(f'[{id}]'.encode())
 
 th = threading.Thread(target=recv_task, args=(sock,))
